@@ -12,39 +12,6 @@
 
 #include "PhoneBook.hpp"
 
-void    print(Contact& contact) {
-    if (!contact.first_name.empty() && !contact.last_name.empty() && !contact.nickname.empty()
-            && !contact.phone_number.empty() && !contact.darkest_secret.empty()) {
-            std::cout << "first name = " << contact.first_name << std::endl;
-            std::cout << "last_name = " << contact.last_name << std::endl;
-            std::cout << "nickname = " << contact.nickname << std::endl;
-            std::cout << "phone_number = " << contact.phone_number << std::endl;
-            std::cout << "darkest_secret = " << contact.darkest_secret << std::endl;         
-    }
-    else
-        std::cout << "This index is incorrect" << std::endl;
-}
-
-void    printSearch(PhoneBook& phonebook) {
-    for (int i = 0; i < 8; i++)
-        phonebook.contacts[i].printLine(i);
-}
-
-void    printContact(PhoneBook& phonebook, int i) {
-    print(phonebook.contacts[i]);
-}
-
-void    AddContact( PhoneBook& phonebook, std::string fname, std::string lname, std::string nname,
-    std::string pnumber, std::string dsecret) {
-        if (phonebook.compteur < 8)
-            phonebook.contacts[phonebook.compteur++] = Contact(fname, lname, nname, pnumber, dsecret);
-        else
-        {
-            phonebook.compteur = 0;
-            phonebook.contacts[phonebook.compteur++] = Contact(fname, lname, nname, pnumber, dsecret);
-        }
-}
-
 std::string truncate(std::string str) {
     if (str.length() > 10)
     {
@@ -53,6 +20,48 @@ std::string truncate(std::string str) {
     else
         return (str);
 }
+
+void    Contact::printLine(int i) {
+        std::cout << std::setw(10) << i << "|"
+                  << std::setw(10) << truncate(first_name) << "|"
+                  << std::setw(10) << truncate(last_name) << "|"
+                  << std::setw(10) << truncate(nickname) << "|"
+                  << std::endl;
+}
+
+void    Contact::print() {
+    if (!first_name.empty() && !last_name.empty() && !nickname.empty()
+            && !phone_number.empty() && !darkest_secret.empty()) {
+                std::cout << "first name = " << first_name << std::endl;
+                std::cout << "last_name = " << last_name << std::endl;
+                std::cout << "nickname = " << nickname << std::endl;
+                std::cout << "phone_number = " << phone_number << std::endl;
+                std::cout << "darkest_secret = " << darkest_secret << std::endl;
+    }
+    else
+        std::cout << "This is not a valid index" << std::endl;
+}
+
+void    PhoneBook::printSearch() {
+    for (int i = 0; i < 8; i++)
+        contacts[i].printLine(i);
+}
+
+void    PhoneBook::printContact(int i) {
+        contacts[i].print();
+}
+
+void    PhoneBook::AddContact(std::string fname, std::string lname, std::string nname,
+    std::string pnumber, std::string dsecret) {
+        if (compteur < 8)
+            contacts[compteur++] = Contact(fname, lname, nname, pnumber, dsecret);
+        else
+        {
+            compteur = 0;
+            contacts[compteur++] = Contact(fname, lname, nname, pnumber, dsecret);
+        }
+}
+
 
 int main() {
     int         index;
@@ -82,7 +91,7 @@ int main() {
 
             if (!fname.empty() && !lname.empty() && !nname.empty()
                 && !pnumber.empty() && !dsecret.empty()) {
-                    AddContact(phonebook, fname, lname, nname, pnumber, dsecret);
+                    phonebook.AddContact(fname, lname, nname, pnumber, dsecret);
                 }
         }
         else if (input == "SEARCH")
@@ -95,7 +104,7 @@ int main() {
                       << std::endl;
 
             std::cout << std::right;
-            printSearch(phonebook);
+            phonebook.printSearch();
             std::cout << std::left;
             std::cout << "Enter index number to show : ";
             std::cin >> index;
@@ -107,13 +116,10 @@ int main() {
             else if (index < 0 || index > 7)
                 std::cout << "Index must be form 0 to 7" << std::endl;
             else
-                printContact(phonebook, index);
+                phonebook.printContact(index);
 
         }
         else if (input == "EXIT")
             break ;
     }
-
-    //phonebook.AddContact("jean", "pagnan", "jeje", "0767871027", "batard");
-    //phonebook.printContact();
 }

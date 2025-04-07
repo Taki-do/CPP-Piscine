@@ -16,13 +16,20 @@
 #include "Contact.hpp"
 
 class PhoneBook {
-public:
+private:
     Contact contacts[8];
     int     compteur;
-
+public:
     PhoneBook() {
         compteur = 0;
     }
+
+    void    AddContact(std::string fname, std::string lname, std::string nname,
+        std::string pnumber, std::string dsecret);
+
+    void    printContact(int i);
+
+    void    printSearch();
 };
 
 #endif
