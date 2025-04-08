@@ -1,6 +1,5 @@
-NAME = phonebook
+NAME = account
 SRC = tests.cpp Account.cpp
-SRC_BONUS = 
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98

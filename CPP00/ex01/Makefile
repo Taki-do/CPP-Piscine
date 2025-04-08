@@ -1,6 +1,5 @@
 NAME = phonebook
 SRC = PhoneBook.cpp
-SRC_BONUS = 
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
