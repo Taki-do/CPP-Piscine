@@ -76,18 +76,16 @@ bool	Account::makeWithdrawal( int withdrawal ) {
         _displayTimestamp();
         std::cout << "index:" << _accountIndex << ";p_amount:" << _amount
             << ";withdrawal:refused" << std::endl;
+        return (false);
     }
-    else
-    {
-        _nbWithdrawals = 1;
-        _displayTimestamp();
-        std::cout << "index:" << _accountIndex << ";p_amount:" << _amount
-            << ";withdrawal:" << withdrawal << ";amount:" << _amount - withdrawal
-            << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
-        _amount -= withdrawal;
-        _totalAmount -= withdrawal;
-        _totalNbWithdrawals += _nbWithdrawals;
-    }
+    _nbWithdrawals = 1;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";p_amount:" << _amount
+        << ";withdrawal:" << withdrawal << ";amount:" << _amount - withdrawal
+        << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+    _amount -= withdrawal;
+    _totalAmount -= withdrawal;
+    _totalNbWithdrawals += _nbWithdrawals;
     return (true);
 }
 
