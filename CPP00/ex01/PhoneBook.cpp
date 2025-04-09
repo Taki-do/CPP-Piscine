@@ -12,6 +12,23 @@
 
 #include "PhoneBook.hpp"
 
+Contact::Contact() {
+    first_name = "";
+    last_name = "";
+    nickname = "";
+    phone_number = "";
+    darkest_secret = "";
+}
+
+Contact::Contact(std::string fname, std::string lname, std::string nname,
+    std::string pnumber, std::string dsecret) {
+    first_name = fname;
+    last_name = lname;
+    nickname = nname;
+    phone_number = pnumber;
+    darkest_secret = dsecret;
+}
+
 std::string truncate(std::string str) {
     if (str.length() > 10)
     {
