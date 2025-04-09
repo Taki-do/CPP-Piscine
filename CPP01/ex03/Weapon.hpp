@@ -16,6 +16,14 @@
 #include <iostream>
 #include <string>
 
-
+class Weapon {
+    private:
+        std::string type;
+    public:
+        Weapon();
+        Weapon(std::string wtype);
+        const std::string& getType();
+        void setType(std::string s_type);
+};
 
 #endif
