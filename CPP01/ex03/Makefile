@@ -1,5 +1,5 @@
-NAME = brain
-SRC = main.cpp
+NAME = weapon
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
