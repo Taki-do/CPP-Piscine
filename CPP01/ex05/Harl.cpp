@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:46:40 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/11 11:45:03 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/11 11:58:12 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void Harl::error( void ) {
 
 void Harl::complain( std::string level ) {
 	Harl 	harl;
-	int		index = -1;
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*message[4])(void) = {
 		&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -40,10 +39,9 @@ void Harl::complain( std::string level ) {
 	{
 		if (levels[i] == level)
 		{
-			index = i;
+			(harl.*message[i])();
 			break;
 		}
 	}
-	for (int i = 0; i <= index; i++)
-		(harl.*message[i])();
+
 }
