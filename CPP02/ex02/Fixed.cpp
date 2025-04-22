@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:43:08 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/22 14:13:06 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/22 15:16:08 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ Fixed::Fixed() {
 }
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
-	fixed = other.getRawBits();
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		fixed = other.getRawBits();
+		fixed = other.fixed;
 	return (*this);
 }
 
@@ -40,4 +40,27 @@ int Fixed::getRawBits( void ) const {
 void Fixed::setRawBits( int const raw ) {
 	(void)raw;
 	std::cout << "setRawBits member function called" << std::endl;
+}
+
+Fixed::Fixed(const int nb) {
+	fixed = nb << frac;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float fnb) {
+	fixed = roundf(fnb * (1 << frac));
+	std::cout << "Float constructor called" << std::endl;
+}
+
+float 	Fixed::toFloat( void ) const {
+	return ((float)fixed / (1 << frac));
+}
+
+int		Fixed::toInt( void ) const {
+	return (fixed / (1 << frac));
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
+	out << fixed.toFloat();
+	return (out);
 }
