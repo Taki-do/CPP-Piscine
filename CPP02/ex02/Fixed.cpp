@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:43:08 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/22 15:16:08 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/22 15:37:41 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,20 @@ int		Fixed::toInt( void ) const {
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
 	out << fixed.toFloat();
 	return (out);
+}
+
+static float min(float nb1, float nb2) {
+	
+}
+
+static float min(const float nb1, const float nb2) {
+	
+}
+
+static float max(float nb1, float nb2) {
+	
+}
+
+static float max(const float nb1, const float nb2) {
+	
 }
