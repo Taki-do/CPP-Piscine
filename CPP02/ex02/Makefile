@@ -1,4 +1,4 @@
-NAME = real_fixed
+NAME = over_fixed
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
