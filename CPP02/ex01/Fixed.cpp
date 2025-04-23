@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:43:08 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/22 15:06:31 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/23 12:05:55 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int Fixed::getRawBits( void ) const {
 }
 
 void Fixed::setRawBits( int const raw ) {
-	(void)raw;
+	fixed = raw;
 	std::cout << "setRawBits member function called" << std::endl;
 }
 

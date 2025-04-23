@@ -6,11 +6,11 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:43:08 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/23 12:06:08 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:54:44 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 Fixed::Fixed() {
 	fixed = 0;
