@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:32:37 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/23 16:58:27 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:13:30 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class ClapTrap {
         ClapTrap(std::string s);
         ClapTrap(const ClapTrap& copy);
         ClapTrap& operator=(const ClapTrap& copy);
-        ~ClapTrap();
-        void attack(const std::string& target);
+        virtual ~ClapTrap();
+        virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };

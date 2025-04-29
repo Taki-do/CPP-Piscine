@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
+/*   Updated: 2025/04/29 12:13:55 by taomalbe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap();
+        ScavTrap(std::string str);
+        virtual ~ScavTrap();
+        void    guardGate();
+        void attack(const std::string& target) override;
+};
+
+#endif
