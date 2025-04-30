@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 16:54:05 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 12:17:28 by taomalbe         ###   ########.fr       */
+/*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
+/*   Updated: 2025/04/30 13:54:26 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main( void ) {
-    ClapTrap one("one");
-    ClapTrap two("two");
+#include "ClapTrap.hpp"
 
-    one.attack("two");
-    two.takeDamage(0);
-    two.attack("one");
-    one.takeDamage(0);
-    two.beRepaired(0);
-    one.beRepaired(0);
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap();
+        ScavTrap(std::string str);
+        ScavTrap(const ScavTrap& copy);
+        ScavTrap& operator=(const ScavTrap& copy);
+        ~ScavTrap();
+        void    guardGate();
+        void attack(const std::string& target);
+};
 
-    ScavTrap first("scav");
-
-    first.attack("one");
-    first.takeDamage(50);
-    first.beRepaired(40);
-    first.guardGate();
-}
+#endif

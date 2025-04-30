@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/29 12:13:55 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:24:56 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class ScavTrap : public ClapTrap {
     public:
         ScavTrap();
         ScavTrap(std::string str);
-        virtual ~ScavTrap();
+        ~ScavTrap();
         void    guardGate();
-        void attack(const std::string& target) override;
+        void attack(const std::string& target);
 };
 
 #endif

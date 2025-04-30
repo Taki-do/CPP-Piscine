@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:36:52 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 12:09:24 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:01:29 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ ClapTrap::ClapTrap(const ClapTrap& copy) {
 ClapTrap& ClapTrap::operator=(const ClapTrap& copy) {
     std::cout << "Operator assignement ClapTrap has been called" << std::endl;
     if (this != &copy)
+    {
         this->name = copy.name;
+        this->hit_points = copy.hit_points;
+        this->energy_points = copy.energy_points;
+        this->attack_damage = copy.attack_damage;
+    }
     return (*this);
 }
 
