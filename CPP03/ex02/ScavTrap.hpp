@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 13:54:26 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:32:20 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-    public:
+    protected:
         ScavTrap();
         ScavTrap(std::string str);
         ScavTrap(const ScavTrap& copy);
