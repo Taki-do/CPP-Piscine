@@ -50,3 +50,15 @@ FragTrap::~FragTrap() {
 void FragTrap::highFivesGuys(void) {
     std::cout << "Hey Guys ! I have no idea for this sentence :)" << std::endl;
 }
+
+int FragTrap::getHitPoint(void) {
+    return (hit_points);
+}
+
+int FragTrap::getEnergyPoint(void) {
+    return (energy_points);
+}
+
+int FragTrap::getAttackDamage(void) {
+    return (attack_damage);
+}

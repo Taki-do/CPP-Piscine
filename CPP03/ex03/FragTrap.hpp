@@ -20,4 +20,7 @@ class FragTrap : public ClapTrap {
         FragTrap& operator=(const FragTrap& copy);
         ~FragTrap();
         void    highFivesGuys(void);
+        int getHitPoint(void);
+        int getEnergyPoint(void);
+        int getAttackDamage(void);
 };

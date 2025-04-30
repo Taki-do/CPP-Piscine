@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-    protected:
+    public:
         ScavTrap();
         ScavTrap(std::string str);
         ScavTrap(const ScavTrap& copy);

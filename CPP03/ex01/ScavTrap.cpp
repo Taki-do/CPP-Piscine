@@ -26,6 +26,23 @@ ScavTrap::ScavTrap(std::string str) : ClapTrap(str) {
     attack_damage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
+    std::cout << "Copy for ScavTrap has been called" << std::endl;
+    *this = copy;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& copy) {
+    std::cout << "Operator assignement ScavTrap has been called" << std::endl;
+    if (this != &copy)
+    {
+        this->name = copy.name;
+        this->hit_points = copy.hit_points;
+        this->energy_points = copy.energy_points;
+        this->attack_damage = copy.attack_damage;
+    }
+    return (*this);
+}
+
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap " << name << " has been expulsed far far away in the galaxy.. (destructor)" << std::endl;
 }

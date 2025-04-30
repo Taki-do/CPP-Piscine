@@ -13,7 +13,16 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() {
-    
+    std::cout << "Default constructor for DiamondTrap has been called" << std::endl;
+    name = "DiamondDefault";
+}
+
+DiamondTrap::DiamondTrap(std::string dname) {
+    std::cout << "Constructor for DiamondTrap has been called" << std::endl;
+    name = dname + "_clap_name";
+    FragTrap::hit_points = FragTrap().getHitPoint();
+    ScavTrap::energy_points = ScavTrap().getEnergyPoint();
+    FragTrap::attack_damage = FragTrap().getAttackDamage();
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy) {

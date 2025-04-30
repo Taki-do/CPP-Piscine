@@ -54,3 +54,15 @@ void ScavTrap::attack(const std::string& target) {
 void ScavTrap::guardGate() {
     std::cout << name << " (ScavTrap) is now in defense mode" << std::endl;
 }
+
+int ScavTrap::getHitPoint(void) {
+    return (hit_points);
+}
+
+int ScavTrap::getEnergyPoint(void) {
+    return (energy_points);
+}
+
+int ScavTrap::getAttackDamage(void) {
+    return (attack_damage);
+}

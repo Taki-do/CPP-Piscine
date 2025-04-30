@@ -17,6 +17,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
         std::string name;
     public:
         DiamondTrap();
+        DiamondTrap(std::string dname);
         DiamondTrap(const DiamondTrap& copy);
         DiamondTrap& operator=(const DiamondTrap& copy);
         ~DiamondTrap();
