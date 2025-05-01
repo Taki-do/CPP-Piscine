@@ -1,8 +1,8 @@
-NAME = fragtrap
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+NAME = diamond
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 all: $(NAME)
 

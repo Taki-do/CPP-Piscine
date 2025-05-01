@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:54:05 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 14:24:45 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:28:49 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void ) {
     std::cout << "[ClapTrap]" << std::endl;
@@ -33,6 +33,11 @@ int main( void ) {
     std::cout << std::endl << "[FragTrap]" << std::endl;
     FragTrap frag("frag");
     frag.highFivesGuys();
+
+    std::cout << std::endl << "[DiamondTrap]" << std::endl;
+    DiamondTrap Diamond("Bebou");
+    Diamond.whoAmI();
+    Diamond.attack("imaginary ennemy");
 
     std::cout << std::endl << "[Destructor]" << std::endl;
 }

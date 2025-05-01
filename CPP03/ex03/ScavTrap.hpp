@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 13:54:26 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:14:30 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
     public:
         ScavTrap();
         ScavTrap(std::string str);
@@ -23,7 +23,7 @@ class ScavTrap : public ClapTrap {
         ScavTrap& operator=(const ScavTrap& copy);
         ~ScavTrap();
         void    guardGate();
-        void attack(const std::string& target);
+        virtual void attack(const std::string& target);
         int getHitPoint(void);
         int getEnergyPoint(void);
         int getAttackDamage(void);

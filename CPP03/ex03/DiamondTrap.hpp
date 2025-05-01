@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 14:31:07 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 14:41:49 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:28:22 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

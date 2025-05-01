@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:54:56 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/04/30 14:22:05 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 09:49:34 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,12 @@ FragTrap::FragTrap(std::string str) : ClapTrap(str) {
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy) {
     std::cout << "Copy for FragTrap has been called" << std::endl;
-    *this = copy;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& copy) {
     std::cout << "Operator assignement FragTrap has been called" << std::endl;
     if (this != &copy)
-    {
-        this->name = copy.name;
-        this->hit_points = copy.hit_points;
-        this->energy_points = copy.energy_points;
-        this->attack_damage = copy.attack_damage;
-    }
+        ClapTrap::operator=(copy);
     return (*this);
 }
 
