@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:54:56 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 09:49:34 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:42:54 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,4 @@ FragTrap::~FragTrap() {
 
 void FragTrap::highFivesGuys(void) {
     std::cout << "Hey Guys ! I have no idea for this sentence :)" << std::endl;
-}
-
-int FragTrap::getHitPoint(void) {
-    return (hit_points);
-}
-
-int FragTrap::getEnergyPoint(void) {
-    return (energy_points);
-}
-
-int FragTrap::getAttackDamage(void) {
-    return (attack_damage);
 }

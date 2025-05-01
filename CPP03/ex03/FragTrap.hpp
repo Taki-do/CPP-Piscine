@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:56:09 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 10:14:20 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:42:47 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,4 @@ class FragTrap : virtual public ClapTrap {
         FragTrap& operator=(const FragTrap& copy);
         ~FragTrap();
         void    highFivesGuys(void);
-        int getHitPoint(void);
-        int getEnergyPoint(void);
-        int getAttackDamage(void);
 };

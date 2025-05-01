@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:31:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 10:14:30 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:43:02 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ class ScavTrap : virtual public ClapTrap {
         ~ScavTrap();
         void    guardGate();
         virtual void attack(const std::string& target);
-        int getHitPoint(void);
-        int getEnergyPoint(void);
-        int getAttackDamage(void);
 };
 
 #endif

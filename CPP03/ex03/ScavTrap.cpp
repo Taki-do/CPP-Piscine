@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:27:23 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 09:49:19 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/01 10:43:12 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,4 @@ void ScavTrap::attack(const std::string& target) {
 
 void ScavTrap::guardGate() {
     std::cout << name << " (ScavTrap) is now in defense mode" << std::endl;
-}
-
-int ScavTrap::getHitPoint(void) {
-    return (hit_points);
-}
-
-int ScavTrap::getEnergyPoint(void) {
-    return (energy_points);
-}
-
-int ScavTrap::getAttackDamage(void) {
-    return (attack_damage);
 }
