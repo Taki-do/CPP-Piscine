@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 10:59:27 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 11:49:03 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:38:47 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal {
 		Animal();
 		Animal(const Animal& copy);
 		Animal& operator=(const Animal& copy);
-		~Animal();
+		virtual ~Animal();
 		virtual std::string getType() const ;
 		virtual void makeSound() const ;
 };

@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:34:39 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/01 12:25:54 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:40:28 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-
-	std::cout << std::endl << "[Wrong animals are coming[]" << std::endl << std::endl;
+	
+	delete meta;
+	delete i;
+	std::cout << std::endl << "[Wrong animals are coming]" << std::endl << std::endl;
+	
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
 	std::cout << j->getType() << " " << std::endl;
@@ -32,10 +35,14 @@ int main()
 	j->makeSound();
 	wmeta->makeSound();
 
+	delete wmeta;
+	delete wi;
+	delete j;
 	std::cout << std::endl << "[Copy test]" << std::endl << std::endl;
 	const Animal *copy = new Cat();
 	const Animal new_animal(*copy);
 
 	new_animal.makeSound();
+	delete copy;
 	return (0);
 }
