@@ -1,5 +1,6 @@
-NAME = abstract
-SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp
+NAME = spam
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp Character.cpp \
+		IMateriaSource.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98

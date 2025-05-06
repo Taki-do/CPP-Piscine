@@ -6,19 +6,22 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:51:40 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/05 18:53:26 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:27:46 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "Ice.hpp"
+class AMateria;
 
 class ICharacter
 {
+	protected:
+		std::string type;
 	public:
 		ICharacter();
+		ICharacter(std::string name);
 		ICharacter(const ICharacter& copy);
 		ICharacter& operator=(const ICharacter& copy);
 		virtual ~ICharacter() {};
