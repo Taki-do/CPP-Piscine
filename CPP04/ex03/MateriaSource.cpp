@@ -6,10 +6,12 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:13:51 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/06 18:05:47 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:55:00 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ice.hpp"
+#include "Cure.hpp"
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() : IMateriaSource() {
@@ -37,6 +39,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& copy) {
 
 MateriaSource::~MateriaSource() {
 	//std::cout << "MateriaSource destructor" << std::endl;
+	for (int i = 0; i < id; i++)
+		delete stock[i];
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
@@ -50,7 +54,14 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < id; i++)
 	{
 		if (stock[i]->getType() == type)
-			return (stock[i]);
+		{
+			if (type == "ice")
+				return (stock[i]->clone());
+			else if (type == "cure")
+				return (stock[i]->clone());
+			else
+				return (NULL);
+		}
 	}
 	return (NULL);
 }

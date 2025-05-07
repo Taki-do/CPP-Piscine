@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:22:34 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/06 17:26:30 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:26:46 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ Cure& Cure::operator=(const Cure& copy) {
 	return (*this);
 }
 
-Cure* Cure::clone() const {
-	return (new Cure());
+AMateria* Cure::clone() const {
+	return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& target) {

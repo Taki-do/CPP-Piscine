@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:01:12 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/06 17:23:55 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:57:24 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	if (slot < 4)
 		materia[slot++] = m;
+	else
+		droped_mat[droped++] = m;
 }
 
 void Character::unequip(int idx) {

@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:30:34 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/06 17:25:42 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:27:39 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Ice& Ice::operator=(const Ice& copy) {
 	return (*this);
 }
 
-Ice* Ice::clone() const {
-	return (new Ice());
+AMateria* Ice::clone() const {
+	return (new Ice(*this));
 }
 
 void Ice::use(ICharacter& target) {

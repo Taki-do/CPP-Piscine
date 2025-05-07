@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:03:25 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/06 15:20:56 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:48:17 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure : public AMateria {
 		Cure();
 		Cure(const Cure& copy);
 		Cure& operator=(const Cure& copy);
-		Cure* clone() const;
+		AMateria* clone() const;
 		void use(ICharacter& target);
 		~Cure();
 };
