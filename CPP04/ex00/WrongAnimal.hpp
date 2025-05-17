@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:07:06 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/05 14:40:50 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/17 09:31:43 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
