@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:01:12 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/07 10:57:24 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:33:27 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,12 @@ Character& Character::operator=(const Character& copy) {
 		for (int i = 0; i < slot; i++)
 			delete materia[i];
 		for (int i = 0; i < copy.slot; i++)
-			materia[i] = copy.materia[i];
+		{
+			if (copy.materia[i])
+				materia[i] = copy.materia[i]->clone();
+			else
+				materia[i] = NULL;
+		}
 		slot = copy.slot;
 		droped = copy.droped;
 	}
