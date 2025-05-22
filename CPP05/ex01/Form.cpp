@@ -52,9 +52,12 @@ void    Form::beSigned(Bureaucrat& b) {
 }
 
 std::ostream& operator<<(std::ostream& os, Form& f) {
-    os << "This form's name is : " << f.getName() << " , it need grade " << f.getGradeSign() <<
-    " to be signed and need grade " << f.getGradeExec() << " to be executed, currently this form' status is " << f.getSigned() <<
-    std::endl;
+    std::string status = "true";
+    if (f.getSigned() == 0)
+        status = "false";
+    os << "This form's name is : " << f.getName() << ", it need grade " << f.getGradeSign() <<
+    " to be signed and need grade " << f.getGradeExec() << " to be executed, currently this form' signed status is " <<
+    status << std::endl;
     return (os);
 }
 
