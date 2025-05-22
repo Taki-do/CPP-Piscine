@@ -15,6 +15,7 @@
 int main() {
 	try {
 		Bureaucrat b(150, "bob");
+		b.decrGrade();
         std::cout << b;
 	} catch (const Bureaucrat::GradeTooHighException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;

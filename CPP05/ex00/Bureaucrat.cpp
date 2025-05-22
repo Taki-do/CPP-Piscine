@@ -12,7 +12,7 @@
 
 #include "Bureaucrat.hpp"
 
-const int Bureaucrat::getGrade() {
+int Bureaucrat::getGrade() {
     return (grade);
 }
 
@@ -29,19 +29,19 @@ Bureaucrat::Bureaucrat(int bgrade, std::string bname) {
     name = bname.c_str();
 }
 
-void    Bureaucrat::incrGrade() {
+void    Bureaucrat::decrGrade() {
     grade++;
     if (grade > 150)
         throw GradeTooLowException();
 }
 
-void    Bureaucrat::decrGrade() {
+void    Bureaucrat::incrGrade() {
     grade--;
     if (grade < 1)
         throw GradeTooHighException();
 }
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
+std::ostream& operator<<(std::ostream& os, Bureaucrat& b) {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
     return (os);
 }
