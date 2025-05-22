@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:21:55 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/17 09:37:34 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:44:04 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat& copy) {
 	if (this != &copy)
 	{
 		Animal::operator=(copy);
-		this->brain = copy.brain;
+		this->brain = new Brain(*copy.brain);
 	}
 	return (*this);
 }
@@ -44,4 +44,8 @@ std::string Cat::getType() const {
 
 void Cat::makeSound() const {
 	std::cout << "* MIAOUUUU *" << std::endl;
+}
+
+Brain*	Cat::getBrain() {
+	return (brain);
 }

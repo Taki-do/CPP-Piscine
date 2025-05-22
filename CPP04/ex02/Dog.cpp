@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:27:14 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/05 16:40:44 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:48:52 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Dog& Dog::operator=(const Dog& copy) {
 	if (this != &copy)
 	{
 		Animal::operator=(copy);
-		this->brain = copy.brain;
+		this->brain = new Brain(*copy.brain);
 	}
 	return (*this);
 }
@@ -44,4 +44,8 @@ std::string Dog::getType() const {
 
 void Dog::makeSound() const {
 	std::cout << "* WOUF WOUF *" << std::endl;
+}
+
+Brain*	Dog::getBrain() {
+	return(brain);
 }

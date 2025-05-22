@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:25:42 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/17 09:37:37 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:43:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Dog : public Animal {
 		Dog(const Dog& copy);
 		Dog& operator=(const Dog& copy);
 		~Dog();
+		Brain*	getBrain();
 		std::string getType() const ;
 		void makeSound() const ;
 };

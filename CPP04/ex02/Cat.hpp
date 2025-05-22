@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:18:23 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/05 14:52:06 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:47:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Cat : public Animal {
 		Cat(const Cat& copy);
 		Cat& operator=(const Cat& copy);
 		~Cat();
+		Brain*	getBrain();
 		std::string getType() const;
 		void makeSound() const ;
 };

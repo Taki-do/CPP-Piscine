@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:18:23 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/17 09:37:35 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:25:54 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Cat : public Animal {
 		Cat(const Cat& copy);
 		Cat& operator=(const Cat& copy);
 		~Cat();
+		Brain*	getBrain();
 		std::string getType() const;
 		void makeSound() const ;
 };

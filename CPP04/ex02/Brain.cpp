@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:47:13 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/05 15:06:34 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/05/22 10:46:41 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,12 @@ Brain& Brain::operator=(const Brain& copy) {
 
 Brain::~Brain() {
 	std::cout << "Brain destructor called" << std::endl;
+}
+
+std::string Brain::getIdea(int nb) {
+	return (ideas[nb]);
+}
+
+void		Brain::setIdea(int nb, std::string s) {
+	ideas[nb] = s;
 }
