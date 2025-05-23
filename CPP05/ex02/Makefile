@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = more_forms
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJ = $(SRC:.cpp=.o)
