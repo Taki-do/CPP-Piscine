@@ -12,12 +12,14 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main() {
 	std::cout << "[Shrubbery success]" << std::endl;
 	try {
-		AForm		*f = new ShrubberyCreationForm("Shru");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("shrubbery creation", "paco");
 		Bureaucrat 	b(2, "bob");
 		b.incrGrade();
 		b.signForm(*f);
@@ -31,11 +33,16 @@ int main() {
     catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
+	catch (const Intern::FormDoesNotExistException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
 
 
 	std::cout << std::endl << "[Robotomy success]" << std::endl;
 	try {
-		AForm		*f = new RobotomyRequestForm("Robot");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("robotomy request", "paco");
 		Bureaucrat 	b(44, "bob");
 		b.decrGrade();
 		b.signForm(*f);
@@ -49,11 +56,15 @@ int main() {
     catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
-
+	catch (const Intern::FormDoesNotExistException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
 
 	std::cout << std::endl << "[Presidential success]" << std::endl;
 	try {
-		AForm		*f = new PresidentialPardonForm("President");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("presidential pardon", "paco");
 		Bureaucrat 	b(1, "bob");
 		b.signForm(*f);
 		b.executeForm(*f);
@@ -66,11 +77,16 @@ int main() {
     catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
+	catch (const Intern::FormDoesNotExistException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
 
 
 	std::cout << std::endl << "[Shrubbery failure]" << std::endl;
 	try {
-		AForm		*f = new ShrubberyCreationForm("Shru");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("shrubberie creation", "paco");
 		Bureaucrat 	b(150, "bob");
 		b.signForm(*f);
 		b.executeForm(*f);
@@ -81,13 +97,18 @@ int main() {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
     catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
+	catch (const Intern::FormDoesNotExistException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
 
 
 	std::cout << std::endl << "[Robotomy failure]" << std::endl;
 	try {
-		AForm		*f = new RobotomyRequestForm("Robot");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("oui request", "paco");
 		Bureaucrat 	b(150, "bob");
 		b.signForm(*f);
 		b.executeForm(*f);
@@ -98,13 +119,18 @@ int main() {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
     catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
+	catch (const Intern::FormDoesNotExistException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
 
 
 	std::cout << std::endl << "[Presidential failure]" << std::endl;
 	try {
-		AForm		*f = new PresidentialPardonForm("President");
+		Intern		randomDude;
+		AForm		*f;
+		f = randomDude.makeForm("Unknowned request", "paco");
 		Bureaucrat 	b(150, "bob");
 		b.signForm(*f);
 		b.executeForm(*f);
@@ -115,6 +141,9 @@ int main() {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
     catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
+	catch (const Intern::FormDoesNotExistException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
 }
