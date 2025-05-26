@@ -45,7 +45,7 @@ int AForm::getGradeExec() const {
 }
 
 void    AForm::beSigned(Bureaucrat& b) {
-    std::cout << "Bureaucrat grade is : " << b.getGrade() << " and form signing grade is " << getGradeSign() << std::endl;
+    //std::cout << "Bureaucrat grade is : " << b.getGrade() << " and form signing grade is " << getGradeSign() << std::endl;
     if (b.getGrade() <= getGradeSign())
     {
         _signed = true;

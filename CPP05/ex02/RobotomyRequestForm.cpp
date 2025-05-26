@@ -37,10 +37,11 @@ bool    RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     {
         if (executor.getGrade() <= getGradeExec())
         {
+            srand(time(NULL));
             if (rand() % 2)
-                std::cout << getTarget() << "has been robotomized successfully !" << std::endl;
+                std::cout << getTarget() << " has been robotomized successfully !" << std::endl;
             else
-                std::cout << getTarget() << "has not been robotomized.." << std::endl;
+                std::cout << getTarget() << " has not been robotomized.." << std::endl;
         }
         else
             throw AForm::GradeTooLowException();

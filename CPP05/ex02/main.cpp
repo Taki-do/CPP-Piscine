@@ -12,16 +12,15 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main() {
-	std::cout << "[This one is a test where the incrementation make the form signed succesfully !]" << std::endl;
+	std::cout << "[Shrubbery]" << std::endl;
 	try {
-		AForm		*f = new ShrubberyCreationForm("Incr");
+		AForm		*f = new ShrubberyCreationForm("Shru");
 		Bureaucrat 	b(2, "bob");
 		b.incrGrade();
 		b.signForm(*f);
-		std::cout << "f is signed ? : " << f->getSigned() << std::endl;
 		b.executeForm(*f);
         std::cout << b;
 		std::cout << *f;
@@ -31,12 +30,27 @@ int main() {
     catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
-	std::cout << std::endl << "[This one is a test where the decrementation make the form signing failed !]" << std::endl;
+	std::cout << std::endl << "[Robotomy]" << std::endl;
 	try {
-		AForm		*f = new ShrubberyCreationForm("Decr");
-		Bureaucrat 	b(1, "bob");
+		AForm		*f = new RobotomyRequestForm("Robot");
+		Bureaucrat 	b(44, "bob");
 		b.decrGrade();
 		b.signForm(*f);
+		b.executeForm(*f);
+        std::cout << b;
+		std::cout << *f;
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
+    catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Caught: " << e.what() << std::endl;
+	}
+	std::cout << std::endl << "[Presidential]" << std::endl;
+	try {
+		AForm		*f = new PresidentialPardonForm("President");
+		Bureaucrat 	b(6, "bob");
+		b.signForm(*f);
+		b.executeForm(*f);
         std::cout << b;
 		std::cout << *f;
 	} catch (const Bureaucrat::GradeTooHighException& e) {
