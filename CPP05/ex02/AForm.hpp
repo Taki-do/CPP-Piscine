@@ -26,11 +26,11 @@ class AForm {
         AForm(const AForm& copy);
         AForm& operator=(const AForm& copy);
         virtual ~AForm();
-        std::string     getName();
-        bool            getSigned();
-        int             getGradeSign();
-        int             getGradeExec();
-        virtual void    beSigned(Bureaucrat& b) = 0;
+        std::string     getName() const ;
+        bool            getSigned() const;
+        int             getGradeSign() const;
+        int             getGradeExec() const;
+        void            beSigned(Bureaucrat& b);
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char* what() const throw();
@@ -39,6 +39,11 @@ class AForm {
             public:
                 virtual const char* what() const throw();
         };
+        class NotSignedException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        virtual bool    execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, AForm& f);

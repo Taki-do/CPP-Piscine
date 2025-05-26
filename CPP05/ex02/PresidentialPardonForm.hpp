@@ -13,6 +13,18 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 
+#include "RobotomyRequestForm.hpp"
 
+class PresidentialPardonForm : public AForm {
+    private:
+        std::string ptarget;
+    public:
+        PresidentialPardonForm(std::string target);
+        PresidentialPardonForm(const PresidentialPardonForm& copy);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);
+        ~PresidentialPardonForm();
+        bool    execute(Bureaucrat const & executor) const;
+        std::string getTarget() const;
+};
 
 #endif

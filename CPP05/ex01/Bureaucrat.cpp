@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int Bureaucrat::getGrade() {
+int Bureaucrat::getGrade() const{
     return (grade);
 }
 

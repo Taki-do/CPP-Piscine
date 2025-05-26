@@ -27,7 +27,7 @@ class Bureaucrat {
         Bureaucrat(int bgrade, std::string bname);
         ~Bureaucrat();
         const std::string getName();
-        int         getGrade();
+        int         getGrade() const;
         void        incrGrade();
         void        decrGrade();
         void        signForm(Form& f);

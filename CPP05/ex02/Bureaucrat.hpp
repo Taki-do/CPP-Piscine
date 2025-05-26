@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include <cstdlib>
 
 class AForm;
 
@@ -26,8 +27,8 @@ class Bureaucrat {
     public:
         Bureaucrat(int bgrade, std::string bname);
         ~Bureaucrat();
-        const std::string getName();
-        int         getGrade();
+        const std::string getName() const;
+        int         getGrade() const;
         void        incrGrade();
         void        decrGrade();
         void        signForm(AForm& f);
@@ -39,6 +40,7 @@ class Bureaucrat {
             public:
                 virtual const char* what() const throw();
         };
+        void        executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& b);

@@ -13,11 +13,11 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-int Bureaucrat::getGrade() {
+int Bureaucrat::getGrade() const {
     return (grade);
 }
 
-const std::string Bureaucrat::getName() {
+const std::string Bureaucrat::getName() const{
     return (name);
 }
 
@@ -60,9 +60,15 @@ Bureaucrat::~Bureaucrat() {};
 void    Bureaucrat::signForm(AForm& f) {
     try {
         f.beSigned(*this);
-        std::cout << this->getName() << " signed form " << f.getName() << std::endl;
+        if (f.getSigned())
+            std::cout << getName() << " signed form " << f.getName() << std::endl;
     }
     catch (const std::exception& e) {
-        std::cout << this->getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+        std::cout << getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
     }
+}
+
+void        Bureaucrat::executeForm(AForm const & form) const {
+    if (form.execute(*this))
+        std::cout << getName() << " executed " << form.getName() << std::endl;
 }

@@ -13,27 +13,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target, int gSign, int gExec) : AForm("ShrubberyCreationForm", gSign, gExec) {
-    std::string filename;
-
-    filename = target + "_shrubbery";
-    std::ofstream w_file(filename.c_str());
-    if (!w_file)
-    {
-        std::cerr << "Can't create file" << std::endl;
-		return ;
-    }
-    w_file <<   " /\\ " << std::endl <<
-                "/||\\" << std::endl <<
-                "/||\\" << std::endl <<
-                " || "  << std::endl <<
-                "----"  << std::endl;
-    w_file <<   " /\\ " << std::endl <<
-                "/||\\" << std::endl <<
-                "/||\\" << std::endl <<
-                " || "  << std::endl <<
-                "----"  << std::endl;
-    w_file.close();
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137) {
+    starget = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) : AForm(copy) {}
@@ -46,7 +27,46 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+std::string ShrubberyCreationForm::getTarget() const {
+    return (starget);
+}
+
 void ShrubberyCreationForm::beSigned(Bureaucrat& b) {
+    
     (void)b;
     std::cout << "beSigned() from Shrubbery" << std::endl;
+}
+
+bool    ShrubberyCreationForm::execute(Bureaucrat const & executor) const  {
+    if (getSigned())
+    {
+        if (executor.getGrade() <= getGradeExec())
+        {
+            std::string filename;
+
+            filename = getTarget() + "_shrubbery";
+            std::ofstream w_file(filename.c_str());
+            if (!w_file)
+            {
+                std::cerr << "Can't create file" << std::endl;
+                return (false);
+            }
+            w_file <<   " /\\ " << std::endl <<
+                        "/||\\" << std::endl <<
+                        "/||\\" << std::endl <<
+                        " || "  << std::endl <<
+                        "----"  << std::endl;
+            w_file <<   " /\\ " << std::endl <<
+                        "/||\\" << std::endl <<
+                        "/||\\" << std::endl <<
+                        " || "  << std::endl <<
+                        "----"  << std::endl;
+            w_file.close();
+        }
+        else
+            throw AForm::GradeTooLowException(); //maybe more exact error ?
+    }
+    else
+        throw AForm::NotSignedException();
+    return (true);
 }

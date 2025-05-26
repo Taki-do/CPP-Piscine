@@ -16,13 +16,16 @@
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
+    private:
+        std::string starget;
     public:
-        ShrubberyCreationForm(std::string target, int gSign, int gExec);
+        ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm& copy);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
         ~ShrubberyCreationForm();
-        
+        bool    execute(Bureaucrat const & executor) const;
         void beSigned(Bureaucrat& b);
+        std::string getTarget() const;
 };
 
 #endif
