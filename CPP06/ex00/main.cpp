@@ -12,7 +12,10 @@
 
 #include "ScalarConverter.hpp"
 
-int main() {
-    ScalarConverter s;
-    s.convert("2526");
+int main(int ac, char *av[]) {
+    if (ac == 2)
+    {
+        std::string s = std::string(av[1]);
+        ScalarConverter::convert(s);
+    }
 }

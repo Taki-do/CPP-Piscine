@@ -25,17 +25,24 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& copy) {
 
 ScalarConverter::~ScalarConverter() {}
 
-void ScalarConverter::convert(std::string conv) {
-    /*
-    try {
-        
-    }
-    catch {
+static int ft_stoi(std::string &s)
+{
+    int i;
 
-    }
-    */
-    int  c;
-    std::stringstream convchar(conv);
-    convchar >> c;
-    std::cout << "Char: " << c << std::endl;
+    std::istringstream(s) >> i;
+    return (i);
+}
+
+void ScalarConverter::convert(std::string &conv) {
+    float value;
+    if (conv == "nan" || conv == "nanf")
+        value = std::nanf("");
+    
+    int val = static_cast<int>(ft_stoi(conv));
+    char c = static_cast<char>(val);
+    if (std::isprint(c))
+        std::cout << "char: " << c << std::endl;
+    else
+        std::cout << "char: Non displayable" << std::endl;
+    std::cout << "int: " << val << std::endl;
 }

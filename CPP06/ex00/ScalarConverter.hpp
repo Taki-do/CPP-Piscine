@@ -16,14 +16,16 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <cmath>
 
 class ScalarConverter {
-    public:
+    private:
         ScalarConverter();
         ScalarConverter(const ScalarConverter& copy);
         ScalarConverter& operator=(const ScalarConverter& copy);
         ~ScalarConverter();
-        static void convert(std::string conv);
+    public:
+        static void convert(std::string &conv);
 };
 
 #endif
