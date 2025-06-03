@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:00:09 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/28 10:21:25 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/03 10:14:11 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScalarConverter {
         ScalarConverter& operator=(const ScalarConverter& copy);
         ~ScalarConverter();
     public:
-        static void convert(std::string &conv);
+        static void convert(std::string conv);
 };
 
 #endif

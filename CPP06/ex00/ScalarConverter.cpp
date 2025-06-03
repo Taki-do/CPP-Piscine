@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:05:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/28 12:08:07 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/03 10:14:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int detectType(std::string &conv) {
     return (-1);
 }
 
-void ScalarConverter::convert(std::string &conv) {
+void ScalarConverter::convert(std::string conv) {
     int     err = 0;
     char    c;
     int     i;
