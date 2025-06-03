@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 11:32:27 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/03 12:03:31 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:41:23 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int	main(void) {
 	identify(*random);
 	std::cout << "[identify with pointer]" << std::endl;
 	identify(random);
+	delete random;
 }
