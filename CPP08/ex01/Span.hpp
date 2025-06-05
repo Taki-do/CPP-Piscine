@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:38:45 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/04 19:56:10 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/05 11:49:43 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 #define SPAN_HPP
 
 #include <iostream>
+#include <vector>
+#include <limits>
+#include <algorithm>
 
 class Span {
 	private:
 		unsigned int 	end;
-		unsigned int	it;
-		int				*tab;
+		std::vector<int> vec;
 	public:
 		Span();
 		Span(unsigned int N);

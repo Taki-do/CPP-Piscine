@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:45:27 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/04 23:20:41 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/05 13:22:18 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main()
 {
-	Span sp = Span(99);
-	sp.SpamNumbers(1, 100);
+	Span sp = Span(200);
+	sp.SpamNumbers(-100, 100);
 	try {
 		std::cout << sp.shortestSpan() << std::endl;
 	}

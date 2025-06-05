@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 18:46:13 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/04 20:03:12 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/05 13:22:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ Span::Span() {}
 
 Span::Span(unsigned int N) {
 	end = static_cast<int>(N);
-	tab = new int[end];
-	it = 0;
 }
 
 Span::Span(const Span& copy) {
@@ -27,23 +25,17 @@ Span::Span(const Span& copy) {
 Span& Span::operator=(const Span& copy) {
 	if (this != &copy)
 	{
-		tab = new int[copy.end];
-		for (unsigned int i = 0; i < copy.end; i++) {
-			tab[i] = copy.tab[i];
-		}
+		vec = copy.vec;
 		end = copy.end;
-		it = 0;
 	}
 	return (*this);
 }
 
-Span::~Span() {
-	delete[] tab;
-}
+Span::~Span() {}
 
 void	Span::addNumber(int nb) {
-	if (it < end)
-		tab[it++] = nb;
+	if (vec.size() < end)
+		vec.push_back(nb);
 	else
 		throw addNumberException();
 }
@@ -53,53 +45,19 @@ const char* Span::addNumberException::what() const throw() {
 }
 
 int	Span::shortestSpan() {
-	int	sSpan;
 	if (end <= 1)
 		throw SpanSearchException();
-	if (tab[0] - tab[1] >= 0)
-		sSpan = tab[0] - tab[1];
-	else
-		sSpan = tab[1] - tab[0];
-	for (unsigned int j = 0; j < end; j++) { //rajouter end - 1 necessaire ?
-		for (unsigned int i = j + 1; i < end; i++) {
-			if (tab[j] - tab[i] >= 0)
-			{
-				if (tab[j] - tab[i] < sSpan)
-					sSpan = tab[j] - tab[i];
-			}
-			else
-			{
-				if (tab[i] - tab[j] < sSpan)
-					sSpan = tab[i] - tab[j];
-			}
-		}
-	}
-	return (sSpan);
+	std::vector<int> tmp = vec;
+	std::sort(tmp.begin(), tmp.end());
+	return (tmp[1] - tmp[0]);
 }
 
 int	Span::longestSpan() {
-	int	lSpan;
 	if (end <= 1)
 		throw SpanSearchException();
-	if (tab[0] - tab[1] >= 0)
-		lSpan = tab[0] - tab[1];
-	else
-		lSpan = tab[1] - tab[0];
-	for (unsigned int j = 0; j < end; j++) {
-		for (unsigned int i = j + 1; i < end; i++) {
-			if (tab[j] - tab[i] >= 0)
-			{
-				if (tab[j] - tab[i] > lSpan)
-					lSpan = tab[j] - tab[i];
-			}
-			else
-			{
-				if (tab[i] - tab[j] > lSpan)
-					lSpan = tab[i] - tab[j];
-			}
-		}
-	}
-	return (lSpan);
+	std::vector<int> tmp = vec;
+	std::reverse(tmp.begin(), tmp.end());
+	return (tmp[0] - tmp[tmp.size() - 1]);
 }
 
 const char * Span::SpanSearchException::what() const throw() {
