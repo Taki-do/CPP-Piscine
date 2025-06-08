@@ -6,18 +6,11 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 14:15:42 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/07 18:02:39 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/08 09:33:40 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
-#include <cctype>
-#include <map>
-#include <sstream>
-#include <limits.h>
+#include "BitcoinExchange.hpp"
 
 int check_value(std::string line) {
 	long unsigned int j = 0;
@@ -71,30 +64,18 @@ int	check_format(std::string line) {
 }
 
 int	main(int ac, char *av[]) {
-	float	value;
-	std::ifstream 	csv;
 	std::ifstream 	input;
 	std::string		line;
-	std::map <std::string, float> m;
+	BitcoinExchange	Tmp;
+	float	value;
 
 	if (ac != 2) {
 		std::cerr << "Error: Invalid number of arguments, usage : ./btc your_file" << std::endl;
 		return (1);
 	}
-	csv.open("data.csv");
-	if (!csv) {
-		std::cerr << "Error while opening file" << std::endl;
+	if (!Tmp.setMap())
 		return (1);
-	}
-	getline(csv, line);
-	while (getline(csv, line)) {
-		if (line.find(",") == std::string::npos)
-			std::cerr << "Line is not DATE | VALUE format." << std::endl;
-		std::string date = line.substr(0, 10);
-		std::istringstream	svalue(line.substr(11, line.size()));
-		svalue >> value;
-		m[date] = value;
-	}
+	BitcoinExchange	Btc(Tmp);
 	input.open(av[1]);
 	if (!input) {
 		std::cerr << "Error while opening file" << std::endl;
@@ -110,19 +91,15 @@ int	main(int ac, char *av[]) {
 		if (!check_value(line.substr(13, line.size())))
 			continue ;
 		std::istringstream	svalue(line.substr(13, line.size()));
-		if (svalue.fail()) {
-			std::cerr << "Error : invalid format, correct format is \"date | value\"\n";
-			continue ;
-		}
 		svalue >> value;
-		std::map<std::string, float>::iterator it = m.lower_bound(date);
-		if (it != m.end() && it->first == date)
+		std::map<std::string, float>::iterator it = Btc.getIterator(date);
+		if (it != Btc.getMapEnd() && it->first == date)
 			std::cout << date << " => " << value << " = "
-					  << value * m[it->first] << std::endl;
-		else if (it != m.begin()) {
+					  << value * Btc.getMap(it) << std::endl;
+		else if (it != Btc.getMapBegin()) {
 			it--;
 			std::cout << date << " => " << value << " = "
-					  << value * m[it->first] << std::endl;
+					  << value * Btc.getMap(it) << std::endl;
 		}
 		else {
 			if (!check_format(date)) {
