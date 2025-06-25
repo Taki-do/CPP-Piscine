@@ -6,11 +6,15 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 11:16:20 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/26 11:16:20 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:11:02 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45) {
+    rtarget = "default";
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(target, 72, 45) {
     rtarget = target;

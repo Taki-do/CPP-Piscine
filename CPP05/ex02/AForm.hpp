@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 11:11:59 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/22 11:11:59 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:07:52 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class AForm {
         const int           gradeSign;
         const int           gradeExec;
     public:
+        AForm();
         AForm(std::string fname, int gSign, int gExec);
         AForm(const AForm& copy);
         AForm& operator=(const AForm& copy);

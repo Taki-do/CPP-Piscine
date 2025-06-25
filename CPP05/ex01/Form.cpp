@@ -6,11 +6,15 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 11:15:34 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/22 11:15:34 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 14:12:59 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form() : name("default"), gradeSign(150), gradeExec(150) {
+    _signed = false;
+}
 
 Form::Form(std::string fname, int gSign, int gExec) : name(fname), gradeSign(gSign), gradeExec(gExec) {
     _signed = false;

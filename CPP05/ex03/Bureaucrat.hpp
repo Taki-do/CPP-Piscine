@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:45:39 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/21 11:45:39 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:09:04 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class Bureaucrat {
         const char  *name;
         int         grade;
     public:
+        Bureaucrat();
         Bureaucrat(int bgrade, std::string bname);
+        Bureaucrat(const Bureaucrat& copy);
+        Bureaucrat& operator=(const Bureaucrat& copy);
         ~Bureaucrat();
         const std::string getName() const;
         int         getGrade() const;

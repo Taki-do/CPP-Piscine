@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:12:08 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/22 13:12:08 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:10:04 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class PresidentialPardonForm : public AForm {
     private:
         std::string ptarget;
     public:
+        PresidentialPardonForm();
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm& copy);
         PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);

@@ -6,12 +6,16 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:18:30 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/22 13:18:30 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:11:31 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
+
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) {
+    starget = "default";
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137) {
     starget = target;

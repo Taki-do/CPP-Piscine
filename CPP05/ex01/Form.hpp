@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 11:11:59 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/22 11:11:59 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 14:11:32 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Form {
         const int           gradeSign;
         const int           gradeExec;
     public:
+        Form();
         Form(std::string fname, int gSign, int gExec);
         Form(const Form& copy);
         Form& operator=(const Form& copy);

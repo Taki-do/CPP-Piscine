@@ -6,12 +6,14 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:48:19 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/05/21 11:48:19 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:08:44 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+Bureaucrat::Bureaucrat() : name("default"), grade(150) {}
 
 int Bureaucrat::getGrade() const {
     return (grade);
@@ -28,6 +30,16 @@ Bureaucrat::Bureaucrat(int bgrade, std::string bname) {
     if (grade > 150)
         throw GradeTooLowException();
     name = bname.c_str();
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) {
+    *this = copy;
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy) {
+    if (this != &copy)
+        grade = copy.grade;
+    return (*this);
 }
 
 void    Bureaucrat::decrGrade() {
