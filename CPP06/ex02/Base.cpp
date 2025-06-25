@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 11:34:14 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/03 12:01:08 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:28:25 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Base * generate(void) {
 	return (new C());
 }
 
-void identify(Base* p) { //pas opti
+void identify(Base* p) {
 	char	id;
 	A* aptr = dynamic_cast<A*>(p);
 	if (aptr)

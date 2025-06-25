@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 10:24:28 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/03 10:43:58 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:22:18 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Data* Serializer::deserialize(uintptr_t raw) {
 	return (reinterpret_cast<Data*>(raw));
 }
 
-Serializer::Serializer() {} ;
+Serializer::Serializer() {}
 
 Serializer::Serializer(const Serializer& copy) {
 	*this = copy;
@@ -31,4 +31,4 @@ Serializer& Serializer::operator=(const Serializer& copy) {
 	return (*this);
 }
 
-Serializer::~Serializer() {} ;
+Serializer::~Serializer() {}

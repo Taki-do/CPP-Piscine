@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:05:32 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/06/07 14:49:27 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:16:59 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int detectType(std::string &conv) {
     if (conv.length() == lui)
     {
         if (std::isprint(conv[0]) && !std::isdigit(conv[0]))
-            return (0); //char
+            return (0);
     }
     if (conv[0] == '+' || conv[0] == '-' || std::isdigit(conv[0]))
     {
@@ -45,7 +45,7 @@ int detectType(std::string &conv) {
                 break;
         }
         if (i == conv.length())
-            return (1); //int
+            return (1);
     }
     std::istringstream ss(conv);
     if (ss.fail())
@@ -55,10 +55,10 @@ int detectType(std::string &conv) {
     }
     if ((conv[conv.length() - 1] == 'f' && conv.find('.') != std::string::npos)
         || conv == "nanf" || conv == "+inff" || conv == "-inff")
-        return (2); //c'est un float
+        return (2);
     if ((conv[conv.length() - 1] != 'f' && conv.find('.') != std::string::npos)
         || conv == "nan" || conv == "+inf" || conv == "-inf")
-        return (3); //c'est un double
+        return (3);
     return (-1);
 }
 

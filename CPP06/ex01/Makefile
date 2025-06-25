@@ -1,5 +1,5 @@
 NAME = serialization
-SRC = main.cpp Serializer.cpp Data.cpp
+SRC = main.cpp Serializer.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
