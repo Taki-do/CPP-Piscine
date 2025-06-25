@@ -50,31 +50,35 @@ int main(void)
     }
     delete [] mirror;
 
-    Array<int> first(5);
-    for (int i = 0; i < 5; i++)
+    Array<int> first(10);
+    for (int i = 0; i < 10; i++)
         first[i] = i;
     Array<int> second(first);
 
     std::cout << "[Check that first and second are the same]" << std::endl;
     std::cout << "first = ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 10; i++)
         std::cout << first[i] << " ";
     std::cout << std::endl;
     std::cout << "second = ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 10; i++)
         std::cout << second[i] << " ";
     std::cout << std::endl;
 
-    for (int i = 0; i < 5; i++)
-        second[i] = i * i;
+    for (int i = 0; i < 10; i++) {
+        if (i < 2)
+            second[i] = i;
+        else
+            second[i] = second[i - 2] + second[i - 1]; 
+    }
 
     std::cout << "[Check after changed values for second]" << std::endl;
     std::cout << "first = ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 10; i++)
         std::cout << first[i] << " ";
     std::cout << std::endl;
     std::cout << "second = ";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 10; i++)
         std::cout << second[i] << " ";
     std::cout << std::endl;
 
